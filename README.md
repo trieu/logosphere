@@ -1,5 +1,9 @@
 # LEO LIVE BOOK
 
+
+![LEO LIVE BOOK](screenshot.png)
+
+
 **Turning Static Knowledge into Interactive Learning Ecosystems.**
 
 **LEO LIVE BOOK** is an AI-native engine designed to transform any book—academic, professional, or personal—into a structured, multi-dimensional learning experience. By leveraging Python, LLM AI Agents (Google Gemini), and high-performance vector databases, LEO LIVE BOOK automates the entire pedagogical pipeline: from raw text extraction to the generation of lecture slides, mindmaps, and auto-graded assessments.

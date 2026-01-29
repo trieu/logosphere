@@ -1,0 +1,275 @@
+:root {
+    --leo-primary: #4f46e5;
+    --leo-bg: #f7f8fb;
+    --leo-border: #e5e7eb;
+    --leo-muted: #6b7280;
+}
+
+body {
+    font-family: Inter, system-ui, sans-serif;
+    background: var(--leo-bg);
+    color: #111827;
+}
+
+/* ===========================
+   Layout
+=========================== */
+
+.app {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 260px 1fr 340px;
+}
+
+/* ===========================
+   Navbar
+=========================== */
+
+.navbar input::placeholder {
+    color: #cbd5f5;
+    opacity: 0.8;
+}
+
+.navbar .form-control:focus {
+    box-shadow: none;
+    background-color: #374151;
+}
+
+
+/* ===========================
+   Sidebar
+=========================== */
+
+.sidebar {
+    background: #0f172a;
+    color: white;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h5 {
+    font-weight: 700;
+    letter-spacing: 0.4px;
+}
+
+.chapter-list a {
+    display: block;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+    border-radius: 8px;
+    color: #cbd5f5;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.chapter-list a.active,
+.chapter-list a:hover {
+    background: rgba(79,70,229,.25);
+    color: white;
+}
+
+/* ===========================
+   Reader
+=========================== */
+
+.reader {
+    padding: 36px 48px;
+    overflow-y: auto;
+}
+
+.reader-card {
+    background: white;
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 20px 40px rgba(0,0,0,.04);
+}
+
+.reader h1 {
+    font-weight: 700;
+}
+
+.reader p {
+    font-size: 17px;
+    line-height: 1.7;
+    color: #374151;
+}
+
+/* ===========================
+   Knowledge Tags
+=========================== */
+
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 999px;
+    background: rgba(79,70,229,.1);
+    color: var(--leo-primary);
+    margin-right: 8px;
+}
+
+/* ===========================
+   AI Panel
+=========================== */
+
+.ai-panel {
+    background: white;
+    border-left: 1px solid var(--leo-border);
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+}
+
+.ai-panel h6 {
+    font-weight: 700;
+    letter-spacing: .3px;
+}
+
+.ai-tabs button {
+    font-size: 13px;
+}
+
+.ai-canvas {
+    height: 300px;
+    border: 2px dashed var(--leo-border);
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--leo-muted);
+    margin-bottom: 24px;
+}
+
+/* ===========================
+   AI Status
+=========================== */
+
+.ai-status {
+    background: rgba(79,70,229,.08);
+    border-radius: 14px;
+    padding: 16px;
+}
+
+.pulse {
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 1.4s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: .3; }
+    50% { opacity: 1; }
+    100% { opacity: .3; }
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media (max-width: 1200px) {
+    .app {
+        grid-template-columns: 220px 1fr;
+    }
+    .ai-panel {
+        display: none;
+    }
+}
+
+/* ===============================
+   App Header
+================================ */
+
+.app-header {
+    height: 52px;
+    background: #0f172a;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 2000;
+}
+
+/* ===============================
+   Layout
+================================ */
+
+.app {
+    height: calc(100vh - 52px);
+    display: grid;
+    grid-template-columns: 260px 1fr 340px;
+}
+
+/* ===============================
+   Sidebar
+================================ */
+
+.sidebar {
+    background: #0f172a;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: all .3s ease;
+}
+
+/* Book card */
+
+.book-card img {
+    max-width: 140px;
+}
+
+/* ===============================
+   Collapsed Nav
+================================ */
+
+body.nav-collapsed .sidebar {
+    transform: translateX(-100%);
+}
+
+body.nav-collapsed .app {
+    grid-template-columns: 0 1fr 340px;
+}
+
+/* ===============================
+   Fullscreen Mode
+================================ */
+
+body.fullscreen-mode .sidebar,
+body.fullscreen-mode .ai-panel {
+    display: none;
+}
+
+body.fullscreen-mode .app {
+    grid-template-columns: 1fr;
+}
+
+/* ===============================
+   Mobile
+================================ */
+
+@media (max-width: 992px) {
+
+    .app {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 52px;
+        bottom: 0;
+        width: 260px;
+        z-index: 3000;
+        transform: translateX(-100%);
+    }
+
+    body.nav-collapsed .sidebar {
+        transform: translateX(0);
+    }
+
+    .ai-panel {
+        display: none;
+    }
+}
