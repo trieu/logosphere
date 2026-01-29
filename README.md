@@ -1,78 +1,92 @@
-# LOGOSPHERE
-AI-driven system that makes doctrine intelligible.
+# LEO LIVE BOOK
 
-**LOGOSPHERE** is an AI-native knowledge and assessment platform designed to model, examine, and explain doctrinal knowledge through structured data, reasoning, and retrieval-based intelligence.
+**Turning Static Knowledge into Interactive Learning Ecosystems.**
 
-At its core, LOGOSPHERE treats doctrine not as static text, but as a **living knowledge graph**: questions, answers, sources, and interpretations are explicitly modeled, linked, evaluated, and explained.
+**LEO LIVE BOOK** is an AI-native engine designed to transform any book—academic, professional, or personal—into a structured, multi-dimensional learning experience. By leveraging Python, LLM AI Agents (Google Gemini), and high-performance vector databases, LEO LIVE BOOK automates the entire pedagogical pipeline: from raw text extraction to the generation of lecture slides, mindmaps, and auto-graded assessments.
 
-The system combines **PostgreSQL 16**, **JSONB**, and **pgvector** with **LLM-based reasoning** to support automated assessment, semantic search, and transparent explanation of answers — including *why* an answer is correct, not merely *which* answer is correct.
-
----
-
-### Key Capabilities
-
-LOGOSPHERE supports both **objective and reflective learning**:
-
-* Structured exams (multiple-choice, fill-in, essay)
-* Automatic grading for objective questions
-* LLM-assisted grading for essays with explicit rationale
-* Semantic similarity search across questions and doctrines
-* Retrieval-Augmented Generation (RAG) explanations grounded in authoritative sources
-
-Rather than relying on opaque AI output, every explanation in LOGOSPHERE is **traceable** to linked doctrinal or scriptural references.
+The project is part of the broader [LEO CDP Framework](https://github.com/trieu/leo-cdp-framework) ecosystem, focusing on the intelligence layer of knowledge management.
 
 ---
 
-### Knowledge Model
+### 🚀 Key Capabilities
 
-LOGOSPHERE organizes knowledge into four primary layers:
+LEO LIVE BOOK goes beyond simple summarization; it acts as a **Virtual Professor** and **Content Architect**:
 
-1. **Questions**
-   Assessment units stored with flexible JSONB options and vector embeddings.
+* **Universal Book Ingestion:** Parse PDFs, EPUBs, and text files into structured data.
+* **AI Agent Intelligence:** Automated extraction of core concepts, keywords, and semantic summaries.
+* **Dynamic Lecture Material:** Automatically generate structured lecture slides and presentation outlines from book chapters.
+* **Visual Knowledge Maps:** Generate Mermaid.js or Graphviz code to visualize book structures as interactive mindmaps.
+* **Active Pedagogy:** * Automatic generation of exercises (Multiple Choice, Q&A, Case Studies).
+* **Auto-Grading Engine:** Real-time evaluation of student answers with personalized feedback.
 
-2. **Doctrines & Sources**
-   Commandments, creeds, sacraments, catechism texts, and scriptural references, each modeled as first-class entities.
 
-3. **Student Interaction**
-   Answers, attempts, grading results, and feedback — including LLM rationale — are fully auditable.
-
-4. **Reasoning Layer (RAG)**
-   Context is retrieved from linked sources and embeddings before any explanation or evaluation is generated.
-
-This architecture allows the system to explain answers, surface misunderstandings, and support guided learning rather than rote memorization.
+* **Life-Long Learning:** A persistent knowledge graph that tracks student progress and adapts content based on mastery.
 
 ---
 
-### Design Principles
+### 🛠 The Intelligence Stack
 
-* **Explainability over authority**
-  The system must justify conclusions, not merely assert them.
+LEO LIVE BOOK combines a robust data architecture with cutting-edge AI:
 
-* **Faithful to sources, neutral in tone**
-  Explanations are grounded in references without sermonizing.
+1. **Extraction Layer (Python + LLM):** Uses `PyPDF2` and `google-genai` to batch-process book content, maintaining context across thousands of pages.
+2. **Memory Layer (PostgreSQL + pgvector):** Stores book sections as vector embeddings to support Retrieval-Augmented Generation (RAG) and semantic search.
+3. **Reasoning Layer (AI Agents):** Specialized agents for different tasks:
+* *The Analyst:* Extracts keywords and summaries.
+* *The Designer:* Creates slide decks and mindmaps.
+* *The Examiner:* Crafts exercises and grades submissions.
 
-* **AI as examiner, not oracle**
-  LLMs assist reasoning and evaluation but do not define truth.
 
-* **Schema-first, model-agnostic**
-  The database structure remains stable regardless of which LLM is used.
-
----
-
-### Intended Use Cases
-
-* Catechetical education and assessment
-* AI-assisted tutoring with doctrinal grounding
-* Essay evaluation with transparent criteria
-* Knowledge graph exploration and semantic search
-* Research and comparative theology analysis
 
 ---
 
-### Why LOGOSPHERE
+### 📖 Workflow: From PDF to Professor
 
-Most educational systems can tell learners **what** is correct.
-LOGOSPHERE is built to explain **why** it is correct — with sources, structure, and reasoning visible at every step.
+1. **Ingest:** The Python engine parses the PDF and creates a structured map of Chapters, Sections, and Exercises.
+2. **Index:** Content is vectorized and stored in **PostgreSQL 16** for instant semantic retrieval.
+3. **Generate:** * **Slides:** Creates Markdown/PPTX-ready outlines for instructors.
+* **Visuals:** Generates hierarchical mindmaps of the book's logic.
+* **Drills:** Produces practice questions based on specific sections.
 
-In short, LOGOSPHERE is not an AI that *teaches dogma*.
-It is a system that **makes doctrine intelligible**.
+
+4. **Assess:** Students submit answers; the AI Agent compares them against the book's "source of truth," provides a grade, and explains *why* the answer was right or wrong.
+
+---
+
+### 🏗 Knowledge Model (PostgreSQL Schema)
+
+The system organizes data into four primary layers to support life-long learning:
+
+* **Source Material:** Structured text, page references, and book metadata.
+* **Knowledge Assets:** Keywords, summaries, slides, and mindmap nodes.
+* **Assessment Bank:** Generated exercises, correct answers, and grading rubrics.
+* **Student Ledger:** History of attempts, grades, and mastery levels for specific topics.
+
+---
+
+### 🌟 Design Principles
+
+* **Source Fidelity:** Every AI-generated summary or slide is traceable back to a specific page and paragraph in the original book.
+* **Agentic Autonomy:** AI Agents handle the heavy lifting of content creation, allowing human learners to focus on synthesis and application.
+* **Multi-Modal Learning:** Information is presented via text (summaries), visuals (mindmaps), and activity (exercises).
+* **Framework Agnostic:** While optimized for Gemini, the core logic is model-agnostic and schema-first.
+
+---
+
+### 🎯 Intended Use Cases
+
+* **Corporate Training:** Turn technical manuals into interactive certification courses.
+* **Higher Education:** Automate the creation of study guides and lecture slides for textbooks.
+* **Self-Directed Learning:** Upload any non-fiction book to receive a personalized curriculum and "final exam."
+* **Content Publishing:** Help authors provide "Active Learning" versions of their books.
+
+---
+
+### Why LEO LIVE BOOK?
+
+Most AI tools just summarize text. **LEO LIVE BOOK** builds a bridge between **reading** and **mastery**. It ensures that the knowledge contained within a book isn't just stored in a database, but is actively taught, tested, and visualized.
+
+**Don't just read the book. Live the book.**
+
+---
+
+*For development and contribution, visit the core repository: [leo-live-book*](https://github.com/trieu/leo-live-book)
